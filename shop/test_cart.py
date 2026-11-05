@@ -11,3 +11,4 @@ def test_total_empty_cart():
 
 def test_discount():
     assert apply_discount([100, 50], 10) == [90, 45]
+
