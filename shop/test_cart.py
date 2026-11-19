@@ -1,4 +1,5 @@
 from cart import shipping, average, total, apply_discount
+from stats import most_expensive
 
 def test_average():
     assert average([10, 20]) == 15
@@ -20,3 +21,9 @@ def test_shipping_big_cart():
 
 def test_shipping_free_from_50():
     assert shipping([50]) == 0
+
+def test_most_expensive():
+    assert most_expensive([10, 50, 20]) == 50
+
+def test_most_expensive_empty_cart():
+    assert most_expensive([]) is None
