@@ -1,0 +1,1 @@
+![CI](https://github.com/Mouhadjer20/devops-mouhadjer-badro/actions/workflows/ci.yml/badge.svg)
