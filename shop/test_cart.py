@@ -1,5 +1,6 @@
-from cart import shipping, average, total, apply_discount
+from cart import apply_discount, average, shipping, total
 from stats import most_expensive
+
 
 def test_average():
     assert average([10, 20]) == 15
