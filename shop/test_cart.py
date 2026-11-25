@@ -1,4 +1,4 @@
-from cart import apply_discount, average, shipping, total
+from cart import TAX_RATE, apply_discount, average, shipping, total
 from stats import most_expensive
 
 
@@ -28,3 +28,7 @@ def test_most_expensive():
 
 def test_most_expensive_empty_cart():
     assert most_expensive([]) is None
+
+def test_tax_rate_is_a_fraction():
+    assert 0 <= TAX_RATE < 1
+
