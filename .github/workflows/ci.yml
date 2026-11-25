@@ -53,4 +53,15 @@ jobs:
           docker ps -a
           docker logs $(docker ps -alq)
           docker inspect $(docker ps -alq)
-      - run: curl --fail --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:8000/health
+      - name: Check application health
+        run: |
+          for i in {1..20}; do
+            if curl --fail http://127.0.0.1:8000/health; then
+              echo "Application is healthy!"
+              exit 0
+            fi
+            echo "Waiting for Flask to start... ($i/20)"
+            sleep 1
+          done
+          docker logs $(docker ps -alq)
+          exit 1
