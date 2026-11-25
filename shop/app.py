@@ -3,7 +3,7 @@ import os
 
 from flask import Flask
 
-from build import ITEMS, page
+from .build import ITEMS, page
 
 app = Flask(__name__)
 VERSION = os.environ.get("VERSION", "dev")
